@@ -1,24 +1,109 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>aval0vara.info</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    img {
-      max-width: 90vw;
-      max-height: 90vh;
-    }
-  </style>
-</head>
-<body>
-  <img src="imagenes/tuimagen.jpg" alt="aval0vara">
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>aval0vara</title>
+    <meta name="description" content="Elena Carbajal." />
+
+    <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --bg: #f0f0f0;        /* soft grey background */
+        --bg-hover: #c0c0c0;  /* darker grey background on hover */
+        --text: #000000;      /* black text */
+        --muted: #000000;     /* black for muted text as well */
+        --accent: #fff9c4;    /* pale yellow accent */
+        --select-bg: #c0c0c0; /* selection background */
+        --select-text: #fff9c4; /* pale yellow text for selection */
+        --maxw: 600px;        /* editorial column */
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+              body {
+  font-family: 'Noto Serif Display', Georgia, serif;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.7;
+        color: var(--text);
+        background: var(--bg);
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: 100vh;
+      }
+
+      /* Subtle top & bottom accent lines */
+      body::before, body::after {
+        content: "";
+        position: fixed;
+        left: 0; right: 0;
+        height: 1px;
+        background: var(--accent);
+        opacity: 0.35;
+        pointer-events: none;
+      }
+      body::before { top: 0; }
+      body::after { bottom: 0; }
+
+      main { max-width: var(--maxw); padding: 140px 40px; }
+
+      p.bio { font-size: 15px; color: var(--muted); margin-bottom: 28px; max-width: 520px; font-weight: 400; }
+
+      .links { display: flex; flex-direction: row; gap: 24px; flex-wrap: wrap; }
+
+      a {
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        color: var(--text);
+        text-decoration: none;
+        opacity: 0.92;
+        transition: color 100ms ease, opacity 100ms ease;
+      }
+      a:hover { color: var(--accent); opacity: 1; }
+      a:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255, 249, 196, 0.6);
+        border-radius: 3px;
+      }
+
+      body.link-hover {
+        background: var(--bg-hover);
+      }
+
+      /* Custom text selection */
+      ::selection { background: var(--select-bg); color: var(--select-text); }
+    </style>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const body = document.body;
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('mouseenter', () => body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg-hover'));
+          link.addEventListener('mouseleave', () => body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--bg'));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <p class="bio">Elena Carbajal is a curator and researcher focused on the intersections of contemporary art, emerging technologies, and cultural theory.</p>
+
+      <p class="bio">She works at <a href="https://onkaos.com/" target="_blank">Onkaos</a>, where she supports artistic practices that critically engage with the cultural, aesthetic, and cognitive transformations shaped by technological artifacts and infrastructural systems.</p>
+
+<p class="bio"><a href="mailto:elena.carbajal@onkaos.com">Contact</a> for any inquiries! ✫ .  　  · 　　
+·  ⋆ 　 ˚ 　   ✫  · 
+ .      *  　　 
+　　  ˚  · .   ✷ </p>
+
+      <div class="links">
+        <a href="https://x.com/aval0vara" target="_blank">X</a>
+        <a href="https://instagram.com/aval0vara" target="_blank">Instagram</a>
+      </div>
+    </main>
+  </body>
 </html>
